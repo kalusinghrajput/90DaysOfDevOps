@@ -1,0 +1,53 @@
+
+#################### "bash script that print cpu usage,diskusage,ram usage"  ################
+
+
+#!/bin/bash
+
+
+echo "--------------------------Welcome to login to ec2 instance----------------------"
+
+
+
+date;
+echo "uptime"
+uptime
+echo "cucurrentlyonnected:"
+w
+
+
+echo "----------------------------last login destils-----------------------------------"
+
+
+echo "Last login:"
+last -a | head -3
+
+
+
+echo "---------------------------Disk Usage Report------------------------------------------"
+
+
+
+echo "Disk & Memory usage Reposts :
+
+
+echo "Disk space available" && df -H | xargs | awk '{print $10"/"$9}'
+
+
+
+
+echo "--------------------------RAM Usage Report----------------------------------------------"
+
+echo "RAM available" && free -h | xargs | awk '{print $10"/"$8}'
+
+
+
+echo "------------------- CPU top service usage Report-----------------------------------------"
+
+
+
+echo "Utilization and most expensive processers:"
+
+
+top -b | head   -20
+
