@@ -1,0 +1,24 @@
+Step 1: Login as root using the keypair
+
+Step 2: Set up the users and their passwords according to your requirements. You can use the following commands
+
+#sudo adduser USERNAME
+
+#sudo passwd USERNAME
+
+Step 3: Edit the SSH configuration, which you can do using /etc/ssh/sshd_config setting
+
+#vi /etc/ssh/sshd_config 
+Set the following parameters as given:
+
+For allowing a valid user to login without the key
+
+"PasswordAuthentication yes"
+
+If you want to allow root login without a key as well
+
+"PermitRootLogin yes"
+
+Step 4: Run the following command to restart the ssh daemon
+
+sudo service ssh restart
